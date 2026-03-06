@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { useStore } from '../store';
 import { StatCard } from '../components/StatCard';
+import { VehicleMap } from '../components/VehicleMap';
 import { colors, spacing, borderRadius, shadows } from '../lib/theme';
 
 const { width } = Dimensions.get('window');
@@ -29,6 +30,11 @@ export function DashboardScreen() {
           <StatCard title="Pending Orders" value={pendingOrders} color={colors.warning} />
           <StatCard title="In Transit" value={inTransit} color={colors.secondary} />
         </View>
+      </View>
+      
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>🚚 Fleet Map</Text>
+        <VehicleMap />
       </View>
       
       <View style={styles.section}>
